@@ -1,0 +1,2 @@
+{"query": "p99 latency tripled minutes after we shipped a new version and the database connection pool is full", "relevant_urls": ["https://example.invalid/synthetic-1"]}
+{"query": "partner clients get TLS handshake failures overnight and traffic fell to zero", "relevant_urls": ["https://example.invalid/synthetic-2"]}

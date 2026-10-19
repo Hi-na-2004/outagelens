@@ -1,0 +1,5 @@
+url,company
+# Add 100+ public postmortems here (rename this file to sources.csv).
+# A good starting list: github.com/danluu/post-mortems. Verify each URL still works.
+https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/,Cloudflare
+https://blog.cloudflare.com/cloudflare-outage-on-july-17-2020/,Cloudflare
