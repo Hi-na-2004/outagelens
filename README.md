@@ -27,8 +27,7 @@ original reports.
   filterable fields: category, root cause, detection, mitigation, prevention, impact.
 - **Hybrid retrieval.** pgvector semantic search plus Postgres full-text, merged with
   Reciprocal Rank Fusion, optionally reordered by a cross-encoder.
-- **Measured, not guessed.** `make eval` compares four retrieval strategies on a
-  labelled query set; `make bench` load tests the API. See [docs/evaluation.md](docs/evaluation.md).
+- **Measured, not guessed.** `scripts/evaluate.py` and `scripts/eval_by_group.py` compare four retrieval strategies on a labelled query set; `scripts/benchmark.py` load tests the API. See [docs/evaluation.md](docs/evaluation.md).
 - **Latency you can see.** Every response includes a per-stage timing breakdown, shown
   as a ribbon in the UI.
 - **Works without an LLM.** With `LLM_PROVIDER=none`, answers are assembled from the
@@ -99,7 +98,7 @@ More in [docs/architecture.md](docs/architecture.md), including known limitation
 
 All numbers below were measured on my own data and laptop with the scripts in this repo. The dataset is small, so the caveats under each table matter.
 
-**Dataset:** 78 public postmortems (collected from a curated list of links), split into 1,051 chunks. 62 evaluation queries with one correct incident each: 6 written by me and 56 drafted with LLM assistance from the incident reports. No queries were held out, and I did not tune the system against them.
+**Dataset:** 78 public postmortems (collected from a curated list of links), split into 1,051 chunks. 62 evaluation queries with one correct incident each: 6 written by me and 56 drafted with LLM assistance from the incident reports. Incidents were ingested with `--no-llm`, so the extracted fields (category, root cause and so on) come from the simple heuristic fallback rather than an LLM. I did not set aside a separate held-out test set, and I did not tune the system against these queries.
 
 **Retrieval quality** (all 62 queries, top 10 results per query):
 
