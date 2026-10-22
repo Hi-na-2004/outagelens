@@ -7,3 +7,25 @@ data/raw/*.jsonl
 results/*.json
 eval/candidates*.csv
 .DS_Store
+
+# Other companies' article text and local working files: keep out of the repo
+data/raw/
+eval/todo_context.jsonl
+eval/new_context.jsonl
+eval/queries.template.jsonl
+eval/queries.todo.jsonl
+eval/queries.handnew.jsonl
+eval/queries.skipped.txt
+eval/queries.jsonl
+eval/queries.backup.jsonl
+collect_log.txt
+
+# One-off helpers used to repair the query file
+scripts/label_queries.py
+scripts/split_queries.py
+scripts/relabel.py
+scripts/label_new.py
+scripts/merge_check.py
+scripts/apply_drafts.py
+scripts/apply_new.py
+scratch/
